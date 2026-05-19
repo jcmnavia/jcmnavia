@@ -1,16 +1,16 @@
 export const profile = {
   name: 'Juan Camilo Marín Navia',
-  title: 'Full Stack JS Engineer',
+  title: 'Senior Full Stack Engineer',
   tagline: 'I make things happen',
-  yearsShipping: 7,
+  yearsShipping: 6,
   cvPath: '/files/Juan Camilo MARIN NAVIA CV.pdf',
-  email: 'jcmnavia@hotmail.com',
+  email: 'jcmnavia@gmail.com',
   phones: [
     {label: '+57 (300) 345-3662', href: 'tel:+573003453662'},
     {label: '+1 (754) 248-8834', href: 'tel:+17542488834'},
   ],
   socials: [
-    {name: 'GitHub', href: 'https://github.com/jcamilomnavia', slug: 'github'},
+    {name: 'GitHub', href: 'https://github.com/jcmnavia', slug: 'github'},
     {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/juan-camilo-marin-navia/',

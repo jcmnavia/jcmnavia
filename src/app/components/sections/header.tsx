@@ -55,9 +55,9 @@ export function Header() {
           {...item(0.24)}
           className='mt-6 max-w-[44ch] font-body text-base leading-relaxed text-muted-foreground md:text-lg'
         >
-          Full Stack JavaScript engineer. {profile.yearsShipping}+ years
-          building production web &amp; mobile across React, Node, AWS and
-          React Native.
+          {profile.yearsShipping}+ years shipping scalable web &amp; mobile
+          across React, Next.js, React Native, Node and Python. Remote, owning
+          features end-to-end.
         </motion.p>
 
         <motion.div {...item(0.32)} className='mt-10'>

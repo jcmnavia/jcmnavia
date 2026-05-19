@@ -5,31 +5,46 @@ export type Skill = {
 };
 
 const skills: Skill[] = [
-  {label: 'AWS', icon: null},
-  {label: 'Bash', icon: 'siGnubash'},
-  {label: 'Bootstrap', icon: 'siBootstrap'},
-  {label: 'Docker', icon: 'siDocker'},
+  // Programming Languages
+  {label: 'JavaScript', icon: 'siJavascript'},
+  {label: 'TypeScript', icon: 'siTypescript'},
+  {label: 'Python', icon: 'siPython'},
+  {label: 'SQL', icon: null},
+
+  // Frontend
+  {label: 'React', icon: 'siReact'},
+  {label: 'Next.js', icon: 'siNextdotjs'},
+  {label: 'Redux', icon: 'siRedux'},
+  {label: 'Tailwind CSS', icon: 'siTailwindcss'},
+  {label: 'Storybook', icon: 'siStorybook'},
+
+  // Backend
+  {label: 'Node.js', icon: 'siNodedotjs'},
+  {label: 'Nest.js', icon: 'siNestjs'},
   {label: 'Express', icon: 'siExpress'},
-  {label: 'Gatsby', icon: 'siGatsby'},
+  {label: 'Django', icon: 'siDjango'},
+  {label: 'GraphQL', icon: 'siGraphql'},
+
+  // Cloud & DevOps
+  {label: 'AWS', icon: null},
+  {label: 'Serverless', icon: 'siServerless'},
+  {label: 'Docker', icon: 'siDocker'},
+  {label: 'Terraform', icon: 'siTerraform'},
+  {label: 'Bash', icon: 'siGnubash'},
+
+  // Databases
+  {label: 'PostgreSQL', icon: 'siPostgresql'},
+  {label: 'MongoDB', icon: 'siMongodb'},
+
+  // Tools
   {label: 'Git', icon: 'siGit'},
   {label: 'GitHub', icon: 'siGithub'},
-  {label: 'GraphQL', icon: 'siGraphql'},
-  {label: 'Heroku', icon: null},
-  {label: 'HTML5', icon: 'siHtml5'},
-  {label: 'Jest', icon: 'siJest'},
-  {label: 'JavaScript', icon: 'siJavascript'},
-  {label: 'Laravel', icon: 'siLaravel'},
-  {label: 'Node.js', icon: 'siNodedotjs'},
-  {label: 'PHP', icon: 'siPhp'},
-  {label: 'PostgreSQL', icon: 'siPostgresql'},
-  {label: 'React', icon: 'siReact'},
-  {label: 'Redux', icon: 'siRedux'},
-  {label: 'Sass', icon: 'siSass'},
-  {label: 'SQL', icon: null},
-  {label: 'Terraform', icon: 'siTerraform'},
-  {label: 'TypeScript', icon: 'siTypescript'},
-  {label: 'VS Code', icon: null},
-  {label: 'WordPress', icon: 'siWordpress'},
+  {label: 'Expo', icon: 'siExpo'},
+  {label: 'Vercel', icon: 'siVercel'},
+
+  // Integrations
+  {label: 'WhatsApp', icon: 'siWhatsapp'},
+  {label: 'HubSpot', icon: 'siHubspot'},
 ];
 
 export default skills;

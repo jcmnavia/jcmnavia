@@ -47,13 +47,19 @@ export function Work() {
                     className='inline-block rounded-md border border-border bg-card p-5 shadow-sm'
                     style={{transform: `rotate(${flip ? 2 : -2}deg)`}}
                   >
-                    <Image
-                      src={job.image}
-                      alt={`${job.place} logo`}
-                      width={120}
-                      height={120}
-                      className='h-20 w-auto object-contain'
-                    />
+                    {job.image ? (
+                      <Image
+                        src={job.image}
+                        alt={`${job.place} logo`}
+                        width={120}
+                        height={120}
+                        className='h-20 w-auto object-contain'
+                      />
+                    ) : (
+                      <div className='flex h-20 w-32 items-center justify-center px-2 text-center font-mono text-sm font-bold text-foreground/70'>
+                        {job.place}
+                      </div>
+                    )}
                   </div>
                 </div>
 
