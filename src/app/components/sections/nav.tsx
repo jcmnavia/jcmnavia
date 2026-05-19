@@ -5,6 +5,7 @@ import {ThemeToggle} from '@/app/components/ui/theme-toggle';
 import {cn} from '@/app/lib/cn';
 
 const LINKS = [
+  {label: 'AI', href: '#ai'},
   {label: 'Work', href: '#work'},
   {label: 'Skills', href: '#skills'},
   {label: 'Education', href: '#education'},
