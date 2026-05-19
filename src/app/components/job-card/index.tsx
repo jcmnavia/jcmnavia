@@ -27,9 +27,7 @@ const JobCard: FC<JobCardProperties> = ({
           whileInView={{x: 0, width: '110%'}}
           viewport={{once: true}}
           transition={{
-            // @ts-ignore
             type: 'tween',
-            // @ts-ignore
             duration: 0.7,
             delay: 0.2,
             default: {ease: 'linear'},
@@ -46,9 +44,7 @@ const JobCard: FC<JobCardProperties> = ({
         whileInView={{x: 0}}
         viewport={{once: true}}
         transition={{
-          // @ts-ignore
           type: 'tween',
-          // @ts-ignore
           duration: 0.7,
           delay: 0.2,
           default: {ease: 'linear'},

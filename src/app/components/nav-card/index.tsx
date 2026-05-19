@@ -1,6 +1,4 @@
 import {FC} from 'react';
-import {Col} from 'reactstrap';
-// @ts-ignore
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import classNames from 'classnames';
 
@@ -8,10 +6,9 @@ type NavCardProperties = {
   href: string;
   title: string;
   type: string;
-  hover?: string;
 };
 
-const NavCard: FC<NavCardProperties> = ({href, title, type, hover}) => {
+const NavCard: FC<NavCardProperties> = ({href, title, type}) => {
   return (
     <AnchorLink
       href={href}

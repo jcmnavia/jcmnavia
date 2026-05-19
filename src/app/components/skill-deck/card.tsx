@@ -1,16 +1,16 @@
 import React, {FC} from 'react';
-import {AnimationProps, DragHandlers, motion} from 'framer-motion';
+import {motion, type MotionProps} from 'framer-motion';
 import Image from 'next/image';
 
 export type CardType = {text: string; background: string; image: string};
 
 type CardProperties = {
   card: CardType;
-  style: any;
-  onDirectionLock?: DragHandlers['onDirectionLock'];
-  onDragEnd?: DragHandlers['onDragEnd'];
-  onDragStart?: DragHandlers['onDragStart'];
-  animate?: AnimationProps['animate'];
+  style: MotionProps['style'];
+  onDirectionLock?: MotionProps['onDirectionLock'];
+  onDragEnd?: MotionProps['onDragEnd'];
+  onDragStart?: MotionProps['onDragStart'];
+  animate?: MotionProps['animate'];
 };
 
 const Card: FC<CardProperties> = ({

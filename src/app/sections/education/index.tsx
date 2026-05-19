@@ -15,7 +15,6 @@ const Education = () => {
               transition={{delay: 0.2, duration: 0.2}}
               viewport={{once: true}}
             >
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <h3 className='main-card__title'>
                 This is not just some paper...
               </h3>

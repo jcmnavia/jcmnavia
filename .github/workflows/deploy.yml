@@ -1,4 +1,4 @@
-# .github/workflows/build-and-deploy.yml
+# .github/workflows/deploy.yml
 
 name: Node.js CI
 
@@ -12,26 +12,26 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      # a standard step for GitHub actions on Node
+      # https://github.com/pnpm/action-setup
+      # Must run before setup-node so the pnpm cache can be resolved.
+      - uses: pnpm/action-setup@v6
+
       # https://github.com/actions/setup-node
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          # update the Node version to meet your needs
-          node-version: 16
-          cache: npm
+          node-version: 20
+          cache: pnpm
 
       - name: Build
         run: |
-          yarn install --frozen-lockfile
-          yarn build
-          yarn export
-          touch out/.nojekyll
+          pnpm install --frozen-lockfile
+          pnpm build
 
       - name: Deploy
         # https://github.com/JamesIves/github-pages-deploy-action
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: out

@@ -8,7 +8,6 @@ const AboutMe = () => {
       <Container>
         <Row>
           <Col xs={12} md={8} className='aboutme__intro  main-card'>
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
             <h3 className='aboutme__title'>Yep! This is me 😎</h3>
             <p>
               I am a person always interested in learning and improving myself

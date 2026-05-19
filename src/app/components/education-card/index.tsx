@@ -18,7 +18,6 @@ const EducationCard: FC<EducationCardProperties> = ({
   university,
   gpa,
   dates,
-  size = 6,
 }) => {
   return (
     <Col xs={12} md={12} className='education__card-col px-0'>

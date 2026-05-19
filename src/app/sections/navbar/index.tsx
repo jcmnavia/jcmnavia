@@ -1,5 +1,5 @@
 import NavCard from '@/app/components/nav-card';
-import {Container, Row, Col} from 'reactstrap';
+import {Container, Row} from 'reactstrap';
 
 const Navbar = () => {
   return (

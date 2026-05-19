@@ -3,8 +3,12 @@ import {
   useMotionValue,
   useTransform,
   useMotionTemplate,
-  PanInfo,
+  type MotionProps,
 } from 'framer-motion';
+
+// framer-motion v12 no longer exports `PanInfo`; derive it from the
+// drag handler signature instead (second arg of onDragEnd).
+type PanInfo = Parameters<NonNullable<MotionProps['onDragEnd']>>[1];
 import Card, {CardType} from './card';
 import {Row} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -49,7 +53,7 @@ const InfiniteCards: FC<InfiniteCardsProperties> = ({mainCards}) => {
     setDragStart({...dragStart, axis: axis});
 
   const animateCardSwipe =
-    (index: number) => (animation: {x: number; y: number}) => {
+    () => (animation: {x: number; y: number}) => {
       setDragStart({...dragStart, animation});
 
       setTimeout(() => {
@@ -58,18 +62,17 @@ const InfiniteCards: FC<InfiniteCardsProperties> = ({mainCards}) => {
         y.set(0);
         const rest = cards;
         const initials = rest.pop();
-        // @ts-ignore
-        setCards([initials, ...rest]);
+        if (initials) setCards([initials, ...rest]);
       }, 300);
     };
 
-  const onDragEnd = (index: number) => (info: PanInfo) => {
+  const onDragEnd = () => (info: PanInfo) => {
     if (dragStart.axis === 'x') {
-      if (info.offset.x >= 50) animateCardSwipe(index)({x: 1300, y: 0});
-      else if (info.offset.x <= -50) animateCardSwipe(index)({x: -1300, y: 0});
+      if (info.offset.x >= 50) animateCardSwipe()({x: 1300, y: 0});
+      else if (info.offset.x <= -50) animateCardSwipe()({x: -1300, y: 0});
     } else {
-      if (info.offset.y >= 50) animateCardSwipe(index)({x: 0, y: 700});
-      else if (info.offset.y <= -50) animateCardSwipe(index)({x: 0, y: -700});
+      if (info.offset.y >= 50) animateCardSwipe()({x: 0, y: 700});
+      else if (info.offset.y <= -50) animateCardSwipe()({x: 0, y: -700});
     }
   };
 
@@ -87,7 +90,7 @@ const InfiniteCards: FC<InfiniteCardsProperties> = ({mainCards}) => {
               scale: isLast ? scale : undefined,
             }}
             onDirectionLock={(axis) => onDirectionLock(axis)}
-            onDragEnd={(e, info) => onDragEnd(index)(info)}
+            onDragEnd={(e, info) => onDragEnd()(info)}
             animate={
               isLast
                 ? {...dragStart.animation, top: 0}
