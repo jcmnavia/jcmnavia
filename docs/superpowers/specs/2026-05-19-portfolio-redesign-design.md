@@ -169,7 +169,7 @@ Each section is art-directed (brand permission for different visual worlds, cons
 - Entrance choreography per section on scroll-in, fired once (`framer-motion` `whileInView` + `viewport={{ once: true }}`).
 - Ease-out exponential curves (ease-out-expo/quint). No bounce, no elastic.
 - Never animate CSS layout properties (animate transform/opacity).
-- `prefers-reduced-motion`: marquee becomes static wrapped grid; entrance reveals become instant; no parallax.
+- `prefers-reduced-motion`: marquee becomes static wrapped grid; entrance reveals become instant; parallax layers render statically (no scroll-tied transform). See `2026-05-19-parallax-backdrop-design.md`.
 
 ## 9. Responsive
 
