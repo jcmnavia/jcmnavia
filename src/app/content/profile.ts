@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Juan Camilo Marín Navia',
-  title: 'Full Stack JS Developer',
+  title: 'Full Stack JS Engineer',
   tagline: 'I make things happen',
   yearsShipping: 7,
   cvPath: '/files/Juan Camilo MARIN NAVIA CV.pdf',
