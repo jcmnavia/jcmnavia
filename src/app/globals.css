@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens — Committed warm scrapbook palette (OKLCH). */
+:root {
+  --background: oklch(0.94 0.018 75);
+  --foreground: oklch(0.22 0.012 50);
+  --accent: oklch(0.58 0.17 35);
+  --accent-foreground: oklch(0.97 0.01 75);
+  --secondary: oklch(0.48 0.08 160);
+  --secondary-foreground: oklch(0.97 0.01 75);
+  --muted: oklch(0.86 0.015 75);
+  --muted-foreground: oklch(0.45 0.012 55);
+  --border: oklch(0.78 0.015 70);
+  --card: oklch(0.96 0.014 78);
+  --ring: oklch(0.58 0.17 35);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: oklch(0.20 0.012 50);
+  --foreground: oklch(0.92 0.015 75);
+  --accent: oklch(0.66 0.16 38);
+  --accent-foreground: oklch(0.16 0.01 50);
+  --secondary: oklch(0.62 0.10 162);
+  --secondary-foreground: oklch(0.14 0.01 50);
+  --muted: oklch(0.30 0.012 50);
+  --muted-foreground: oklch(0.70 0.012 60);
+  --border: oklch(0.34 0.012 55);
+  --card: oklch(0.24 0.012 50);
+  --ring: oklch(0.66 0.16 38);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+
+  --font-display: var(--font-bricolage), 'Arial Black', sans-serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+  --font-serif: var(--font-spectral), Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 0.125rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.125rem);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Subtle halftone paper grain, used deliberately as a section accent. */
+.paper-grain {
+  background-image: radial-gradient(
+    color-mix(in oklch, var(--color-accent) 7%, transparent) 1.5px,
+    transparent 1.6px
+  );
+  background-size: 14px 14px;
+}
