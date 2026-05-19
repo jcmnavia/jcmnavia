@@ -1,5 +1,6 @@
 import {Nav} from '@/app/components/sections/nav';
 import {Header} from '@/app/components/sections/header';
+import {AI} from '@/app/components/sections/ai';
 import {Work} from '@/app/components/sections/work';
 import {SkillsMarquee} from '@/app/components/sections/skills-marquee';
 import {Education} from '@/app/components/sections/education';
@@ -12,6 +13,7 @@ export default function Home() {
       <Nav />
       <main>
         <Header />
+        <AI />
         <Work />
         <SkillsMarquee />
         <Education />
