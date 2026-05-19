@@ -86,3 +86,41 @@
   );
   background-size: 14px 14px;
 }
+
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  will-change: transform;
+}
+.marquee-rtl {
+  animation: marquee-rtl var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-ltr {
+  animation: marquee-ltr var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-rtl,
+  .marquee-ltr {
+    animation: none;
+  }
+}
