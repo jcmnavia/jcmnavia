@@ -6,6 +6,7 @@ import {
   Geist_Mono,
 } from 'next/font/google';
 import './globals.css';
+import {ThemeProvider} from './lib/theme-provider';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -50,7 +51,16 @@ export default function RootLayout({
       className={`${bricolage.variable} ${spectral.variable} ${hanken.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
