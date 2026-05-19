@@ -7,6 +7,7 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import {ThemeProvider} from './lib/theme-provider';
+import {ParallaxBackdrop} from './components/parallax/parallax-backdrop';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -58,6 +59,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ParallaxBackdrop />
           {children}
         </ThemeProvider>
       </body>
