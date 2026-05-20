@@ -5,6 +5,7 @@ import {Work} from '@/app/components/sections/work';
 import {SkillsMarquee} from '@/app/components/sections/skills-marquee';
 import {Education} from '@/app/components/sections/education';
 import {About} from '@/app/components/sections/about';
+import {BuiltWith} from '@/app/components/sections/built-with';
 import {Footer} from '@/app/components/sections/footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <SkillsMarquee />
         <Education />
         <About />
+        <BuiltWith />
       </main>
       <Footer />
     </>
