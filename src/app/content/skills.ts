@@ -1,7 +1,12 @@
 export type Skill = {
   label: string;
-  /** simple-icons export name (e.g. 'siReact'), or null to render a text tile */
+  /** simple-icons export name (e.g. 'siReact'), local extra-brand-icons
+   *  key (e.g. 'openai'), or null to render a text tile. */
   icon: string | null;
+  /** Optional outbound URL. When set on a node in the AI graph, the logo
+   *  becomes a clickable anchor (target=_blank, noreferrer) with a
+   *  tooltip showing the label. Unused by the general skills marquee. */
+  href?: string;
 };
 
 const skills: Skill[] = [
